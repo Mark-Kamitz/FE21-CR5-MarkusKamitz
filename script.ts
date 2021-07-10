@@ -21,7 +21,7 @@ class Locations {
 }
 
 class Restaurant extends Locations  {
-    constructor(  date: string, name: string,  img : string,  city : string,  zip : number,  adress : string, public tel : string, public type : string, public webAdress : string) {
+    constructor(  date: string, name: string, img : string, city : string, zip : number, adress : string, public tel : string, public type : string, public webAdress : string) {
         super(date, name, img, city, zip, adress);
     }
 
@@ -33,8 +33,8 @@ class Restaurant extends Locations  {
     }
 }
 
-class Event extends Locations  {
-    constructor(  date : string, name: string,  img : string,  city : string, zip : number,  adress : string, public eventDate : string, public eventTime : string, public ticketPrice : string) {
+class Events extends Locations  {
+    constructor(  date : string, name: string, img : string, city : string, zip : number, adress : string, public eventDate : string, public eventTime : string, public ticketPrice : string) {
         super(date, name, img, city, zip, adress);
     }
 
@@ -46,14 +46,14 @@ class Event extends Locations  {
     }
 }
 
-// create the objects
+// creating the objects
 
-var Vienna = new Locations('October 01, 2000 01:00','St. Charles Church','img/church.jpeg', 'Vienna', 1010, 'Karlsplatz 1',);
-var ZooVienna = new Locations('January 06, 1995 15:10','Zoo Vienna','img/zoo.jpeg', 'Vienna', 1130, 'Maxingstraße 13b',);
-var LemmonLeaf = new Restaurant('December 17, 1999 13:30','Lemmon Leaf','img/thai.png', 'Vienna', 1050, 'Kettenbrückengasse 19', '0699  1802060','Thai Restaurant', 'www.lemonleaf.at');
-var Sixta = new Restaurant('May 20, 2020 21:24','Sixta','img/sixta.png', 'Vienna', 1050, 'Schönbrunner Straße 21','+43 1 58 528 56','Restaurant & Bar', 'www.sixta-restaurant.at');
-var Kris = new Event('August 25, 2021 16:55','Kris Kristofferson','img/kris.jpeg', 'Vienna', 1150, 'Wiener Stadthalle, Halle F, Roland Rainer Platz 1', 'Fr., 15.11.2021','20:00', '58,50 EUR');
-var Lenny = new Event('December 17, 2010 20:20','Lenny Kravitz','img/lenny.jpeg', 'Vienna', 1050, 'Wiener Stadthalle - Halle D, Roland Rainer Platz 1', 'Sat., 09.12.2029','19:30', '47,80 EUR');
+var Vienna = new Locations('October 01, 2000 01:00','Monastery','img/monastery.jpeg', 'Lisbon', 1010, 'Karlsplatz 1',);
+var ZooVienna = new Locations('January 06, 1995 15:10','Zoo','img/lion.jpeg', 'New York', 1130, 'Maxingstraße 13b',);
+var LemmonLeaf = new Restaurant('December 17, 1999 13:30','Restaurant','img/restaurant.jpeg', 'Paris', 1050, 'Kettenbrückengasse 19', '0699  1802060','Fancy Food', 'www.lemonleaf.at');
+var Sixta = new Restaurant('May 20, 2020 21:24','Bar','img/bar.jpeg', 'London', 1050, 'Schönbrunner Straße 21','+43 1 58 528 56','Fancy Drinks', 'www.sixta-restaurant.at');
+var Kris = new Events('August 25, 2021 16:55','Male Star','img/male.jpeg', 'Madrid', 1150, 'Wiener Stadthalle, Halle F, Roland Rainer Platz 1', 'Fr., 15.11.2021','20:00', '58,50 EUR');
+var Lenny = new Events('December 17, 2010 20:20','Female Star','img/female.jpeg', 'Vienna', 1050, 'Wiener Stadthalle - Halle D, Roland Rainer Platz 1', 'Sat., 09.12.2029','19:30', '47,80 EUR');
 
 
 for (let val of blog) {
@@ -62,8 +62,8 @@ for (let val of blog) {
 
 function sortUp() {
     blog.sort(function(a : any, b : any) {
-         let dateA = new Date(a.date),  dateB:any = new Date(b.date);
-        return dateB - dateA;
+         var dateA : any = new Date(a.date),  dateB:any = new Date(b.date);
+        return dateA - dateB;
     });
 
     let text : string = "";
@@ -76,8 +76,8 @@ function sortUp() {
 
 function sortDown() {
     blog.sort(function(a : any, b : any) {
-        var dateA = new Date(a.date), dateB = new Date(b.date);
-        return dateA - dateB;
+         var dateA: any = new Date(a.date),  dateB: any = new Date(b.date);
+        return dateB - dateA;
     });
 
     let text : string = "";
